@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HNFAK Mobilya ve Demir İşleri | Kadir Akrap</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        steel: {
+                            50: '#f4f6f8',
+                            100: '#e5e9ee',
+                            800: '#1e2530',
+                            900: '#0f141c',
+                            950: '#0a0d12'
+                        },
+                        oak: {
+                            400: '#d99b56',
+                            500: '#c27d38',
+                            600: '#a36124',
+                            700: '#7e4616'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0d12;
+            color: #e5e9ee;
+            font-family: 'Inter', sans-serif;
+        }
+        .wood-pattern {
+            background-color: #121721;
+            background-image: radial-gradient(#c27d38 0.5px, transparent 0.5px), radial-gradient(#c27d38 0.5px, #121721 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.05;
+        }
+        .img-fallback {
+            background: linear-gradient(135deg, #1e2530 0%, #0f141c 100%);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-oak-500 selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed w-full top-0 z-40 bg-steel-950/90 backdrop-blur-md border-b border-steel-800/80 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="w-11 h-11 bg-gradient-to-br from-oak-500 to-oak-700 rounded-lg flex items-center justify-center shadow-lg shadow-oak-500/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold text-xl text-steel-950">H</i>
+                    </div>
+                    <div>
+                        <span class="font-heading text-xl font-black tracking-wider text-white block leading-none">HNFAK</span>
+                        <span class="text-xs text-oak-400 font-medium tracking-widest uppercase">Mobilya & Demir İşleri</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#hakkimizda" class="text-sm font-medium hover:text-oak-400 transition-colors">Hakkımızda</a>
+                    <a href="#hizmetler" class="text-sm font-medium hover:text-oak-400 transition-colors">Hizmetlerimiz</a>
+                    <a href="#galeri" class="text-sm font-medium hover:text-oak-400 transition-colors">Projelerimiz</a>
+                    <a href="#hesaplama" class="text-sm font-medium hover:text-oak-400 transition-colors">Fiyat Hesapla</a>
+                    <a href="#iletisim" class="text-sm font-medium hover:text-oak-400 transition-colors">İletişim</a>
+                </nav>
+
+                <!-- Phone Quick Call -->
+                <div class="hidden lg:flex items-center space-x-4">
+                    <a href="tel:05079742416" class="flex items-center space-x-2 bg-steel-800 hover:bg-steel-700 text-white px-4 py-2.5 rounded-xl border border-steel-700 transition-all text-sm font-semibold">
+                        <i class="fa-solid fa-phone text-oak-400"></i>
+                        <span>0507 974 24 16</span>
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg bg-steel-800 text-steel-100 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-steel-900 border-b border-steel-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#hakkimizda" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-steel-800 hover:text-oak-400">Hakkımızda</a>
+            <a href="#hizmetler" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-steel-800 hover:text-oak-400">Hizmetlerimiz</a>
+            <a href="#galeri" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-steel-800 hover:text-oak-400">Projelerimiz</a>
+            <a href="#hesaplama" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-steel-800 hover:text-oak-400">Fiyat Hesapla</a>
+            <a href="#iletisim" class="mobile-link block px-3 py-2 rounded-lg text-base font-medium hover:bg-steel-800 hover:text-oak-400">İletişim</a>
+            <a href="tel:05079742416" class="block text-center bg-oak-500 hover:bg-oak-600 text-steel-950 font-bold py-3 rounded-lg mt-4">
+                <i class="fa-solid fa-phone mr-2"></i> Hemen Ara: 0507 974 24 16
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-gradient-to-b from-steel-950 via-steel-900 to-steel-950">
+        <!-- Background accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-oak-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                <div class="md:col-span-7 space-y-6 text-center md:text-left">
+                    <div class="inline-flex items-center space-x-2 bg-oak-500/10 border border-oak-500/30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-oak-400 uppercase tracking-wider">
+                        <i class="fa-solid fa-hammer"></i>
+                        <span>Kadir Akrap Ustalığıyla</span>
+                    </div>
+                    <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
+                        Demirin Mukavemeti, <span class="text-transparent bg-clip-text bg-gradient-to-r from-oak-400 via-oak-500 to-amber-300">Ahşabın Doğallığı</span>
+                    </h1>
+                    <p class="text-steel-100/80 text-lg sm:text-xl max-w-2xl leading-relaxed">
+                        Çelik çatı konstrüksiyonları, demir çatı karkasları ve özel imalat ahşap L koltuk & bahçe mobilyalarında kusursuz işçilik ve uzun ömürlü çözümler sunuyoruz.
+                    </p>
+                    <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="https://wa.me/905079742416?text=Merhaba,%20projem%20i%C3%A7in%20teklif%20almak%20istiyorum." target="_blank" class="inline-flex items-center justify-center px-8 py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/20 transition-all hover:-translate-y-0.5">
+                            <i class="fa-brands fa-whatsapp text-xl mr-2"></i> WhatsApp'tan Teklif Al
+                        </a>
+                        <a href="#hesaplama" class="inline-flex items-center justify-center px-8 py-4 bg-steel-800 hover:bg-steel-700 text-white font-bold rounded-xl border border-steel-700 transition-all">
+                            <i class="fa-solid fa-calculator text-oak-400 mr-2"></i> Maliyet Hesapla
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="pt-8 grid grid-cols-3 gap-4 border-t border-steel-800/80">
+                        <div>
+                            <span class="block font-heading text-2xl font-bold text-white">100%</span>
+                            <span class="text-xs text-steel-100/60">Müşteri Memnuniyeti</span>
+                        </div>
+                        <div>
+                            <span class="block font-heading text-2xl font-bold text-oak-400">Özel Imalat</span>
+                            <span class="text-xs text-steel-100/60">Ölçüye Göre Tasarım</span>
+                        </div>
+                        <div>
+                            <span class="block font-heading text-2xl font-bold text-white">Garanti</span>
+                            <span class="text-xs text-steel-100/60">Ağır Hizmet Malzeme</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Main Image Card -->
+                <div class="md:col-span-5">
+                    <div class="relative rounded-2xl p-2 bg-gradient-to-b from-steel-700 to-steel-800 shadow-2xl">
+                        <div class="relative rounded-xl overflow-hidden aspect-[4/3] img-fallback">
+                            <img src="images/1000203462.jpg" 
+                                 alt="HNFAK Demir Çatı Konstrüksiyonu" 
+                                 onerror="this.src='https://placehold.co/800x600/1e2530/e5e9ee?text=HNFAK+Demir+Cati'"
+                                 class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-steel-950 via-transparent to-transparent opacity-80"></div>
+                            <div class="absolute bottom-4 left-4 right-4">
+                                <span class="bg-oak-500 text-steel-950 text-xs font-bold px-2.5 py-1 rounded">Öne Çıkan Proje</span>
+                                <p class="text-white font-bold mt-1">Ağır Sanayi Demir Çatı ve Profil Karkas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="hakkimizda" class="py-20 bg-steel-900 border-t border-steel-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="font-heading text-3xl font-bold text-white">
+                        Usta Eliyle İşlenen Çelik ve Ahşap
+                    </h2>
+                    <p class="text-steel-100/80 leading-relaxed">
+                        <strong>HNFAK Mobilya ve Demir İşleri</strong> olarak, kurucumuz <strong>Kadir Akrap</strong> liderliğinde dayanıklılığı ve estetiği bir arada sunuyoruz. Demir çatı kaplamalarından balkona özel ahşap L koltuk imalatına kadar geniş bir alanda projelerinizi hayata geçiriyoruz.
+                    </p>
+                    <p class="text-steel-100/80 leading-relaxed">
+                        Her projemizde milimetrik ölçülendirme, yüksek statik mukavemetli çelik profiller ve 1. sınıf ahşap koruyucu kaplamalar kullanarak yıllarca sorunsuz kullanabileceğiniz yapılar üretiyoruz.
+                    </p>
+                    
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-oak-400"></i>
+                            <span class="text-sm font-medium">Balkon, Teras ve Bahçelere Özel Ölçülü Tasarımlar</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-oak-400"></i>
+                            <span class="text-sm font-medium">Sert İklim Koşullarına Dayanıklı Demir Çatı Sistemleri</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-circle-check text-oak-400"></i>
+                            <span class="text-sm font-medium">Doğal Ahşap Yağları ve Antipas Boya Uygulamaları</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Owner / Workshop Card -->
+                <div class="bg-steel-800/50 p-8 rounded-2xl border border-steel-700/60 relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-oak-500/10 rounded-full blur-2xl"></div>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-16 h-16 bg-oak-500/20 rounded-full flex items-center justify-center border border-oak-500/40">
+                            <i class="fa-solid fa-user-gear text-2xl text-oak-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-heading text-xl font-bold text-white">Kadir Akrap</h3>
+                            <p class="text-sm text-oak-400">Firma Sahibi & Usta</p>
+                        </div>
+                    </div>
+                    <blockquote class="text-steel-100/90 italic border-l-2 border-oak-500 pl-4 py-1">
+                        "Yaptığımız işte en ufak bir zayıf noktaya yer yoktur. İster dev bir çatının profili olsun, ister evinizin balkonundaki L koltuk; ilk günkü sağlamlığını onlarca yıl korumalıdır."
+                    </blockquote>
+                    <div class="mt-6 pt-6 border-t border-steel-700 flex justify-between items-center text-xs text-steel-100/60">
+                        <span>İletişim: 0507 974 24 16</span>
+                        <span>Yerel Imalat & Ustalık</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="hizmetler" class="py-20 bg-steel-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-oak-400 text-xs font-bold uppercase tracking-widest">Uzmanlık Alanlarımız</span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mt-2">Neler Üretiyoruz?</h2>
+                <div class="w-20 h-1 bg-oak-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Service 1: Iron Roof & Steel Framing -->
+                <div class="bg-steel-900 rounded-2xl overflow-hidden border border-steel-800 hover:border-oak-500/50 transition-all duration-300 group">
+                    <div class="h-64 overflow-hidden relative img-fallback">
+                        <img src="images/1000203460.jpg" 
+                             alt="Demir Çatı Karkas Imalatı" 
+                             onerror="this.src='https://placehold.co/800x600/1e2530/e5e9ee?text=Demir+Cati+Isleri'"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-steel-900 via-steel-900/40 to-transparent"></div>
+                        <div class="absolute bottom-4 left-6">
+                            <span class="bg-steel-950/80 text-oak-400 text-xs px-3 py-1 rounded-full border border-steel-700">Ağır Sanayi & Yapı</span>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 space-y-4">
+                        <h3 class="font-heading text-2xl font-bold text-white group-hover:text-oak-400 transition-colors">
+                            Demir ve Çelik Çatı Sistemleri
+                        </h3>
+                        <p class="text-steel-100/70 text-sm leading-relaxed">
+                            Fabrika, depo, müstakil ev ve teraslar için yüksek mukavemetli profil ve makas çelik karkas yapımı. Kar, rüzgar ve iklim yüklerine karşı özel statik çözümler.
+                        </p>
+                        <ul class="space-y-2 text-xs text-steel-100/80 pt-2">
+                            <li class="flex items-center"><i class="fa-solid fa-chevron-right text-oak-500 text-xs mr-2"></i> Çelik Profil Karkas ve Makas İmalatı</li>
+                            <li class="flex items-center"><i class="fa-solid fa-chevron-right text-oak-500 text-xs mr-2"></i> Sandviç Panel & Sac Çatı Kaplama</li>
+                            <li class="flex items-center"><i class="fa-solid fa-chevron-right text-oak-500 text-xs mr-2"></i> Teras ve Garaj Üstü Kapatma</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Service 2: Custom Wooden Furniture & L-Couches -->
+                <div class="bg-steel-900 rounded-2xl overflow-hidden border border-steel-800 hover:border-oak-500/50 transition-all duration-300 group">
+                    <div class="h-64 overflow-hidden relative img-fallback">
+                        <img src="images/1000203446.jpg" 
+                             alt="Ahşap L Koltuk ve Bahçe Mobilyası" 
+                             onerror="this.src='https://placehold.co/800x600/1e2530/e5e9ee?text=Ahsap+L+Koltuk'"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-steel-900 via-steel-900/40 to-transparent"></div>
+                        <div class="absolute bottom-4 left-6">
+                            <span class="bg-steel-950/80 text-oak-400 text-xs px-3 py-1 rounded-full border border-steel-700">Özel Mobilya Imalatı</span>
+                        </div>
+                    </div>
+                    <div class="p-6 sm:p-8 space-y-4">
+                        <h3 class="font-heading text-2xl font-bold text-white group-hover:text-oak-400 transition-colors">
+                            Ahşap L Koltuk & Bahçe Mobilyaları
+                        </h3>
+                        <p class="text-steel-100/70 text-sm leading-relaxed">
+                            Balkon, veranda ve bahçelerinize tam uyumlu özel ölçülü ahşap L köşe takımları, masalar ve oturma grupları. Dış mekandan etkilenmeyen emprenyeli ahşap kalitesi.
+                        </p>
+                        <ul class="space-y-2 text-xs text-steel-100/80 pt-2">
+                            <li class="flex items-center"><li class="flex items-center"><i class="fa-solid fa-chevron-right text-oak-500 text-xs mr-2"></i> Balkona Özel Ölçülü L Köşe Koltuklar</li>
+                            <li class="flex items-center"><i class="fa-solid fa-chevron-right text-oak-500 text-xs mr-2"></i> Dış Mekan Ahşap Masalar ve Banklar</li>
+                            <li class="flex items-center"><i class="fa-solid fa-chevron-right text-oak-500 text-xs mr-2"></i> Suya ve Güneşe Dayanıklı Ahşap Vernikleme</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="galeri" class="py-20 bg-steel-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-oak-400 text-xs font-bold uppercase tracking-widest">Uygulama Örnekleri</span>
+                    <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white mt-2">Tamamlanan Projeler</h2>
+                </div>
+                <!-- Gallery Filter Buttons -->
+                <div class="mt-6 md:mt-0 flex flex-wrap gap-2">
+                    <button onclick="filterGallery('all')" class="filter-btn active px-4 py-2 text-xs font-bold rounded-lg bg-oak-500 text-steel-950 transition-all">Tümü</button>
+                    <button onclick="filterGallery('cati')" class="filter-btn px-4 py-2 text-xs font-bold rounded-lg bg-steel-800 text-steel-100 hover:bg-steel-700 transition-all">Çatı & Çelik</button>
+                    <button onclick="filterGallery('mobilya')" class="filter-btn px-4 py-2 text-xs font-bold rounded-lg bg-steel-800 text-steel-100 hover:bg-steel-700 transition-all">Ahşap & Mobilya</button>
+                </div>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Image 1 -->
+                <div class="gallery-item cati bg-steel-800 rounded-xl overflow-hidden border border-steel-700 group cursor-pointer" onclick="openLightbox('images/1000203462.jpg', 'Çelik Çatı Karkas İskelet Montajı')">
+                    <div class="aspect-[4/3] overflow-hidden relative img-fallback">
+                        <img src="images/1000203462.jpg" alt="Çelik Çatı Montajı" onerror="this.src='https://placehold.co/600x450/1e2530/e5e9ee?text=HNFAK+Cati+1'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-steel-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl text-oak-400"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-xs text-oak-400 font-semibold uppercase">Çatı Sistemleri</span>
+                        <h4 class="font-bold text-white mt-1">Çelik Çatı Profil Karkası</h4>
+                    </div>
+                </div>
+
+                <!-- Image 2 -->
+                <div class="gallery-item cati bg-steel-800 rounded-xl overflow-hidden border border-steel-700 group cursor-pointer" onclick="openLightbox('images/1000203460.jpg', 'Demir Çatı Karkas Yapımı')">
+                    <div class="aspect-[4/3] overflow-hidden relative img-fallback">
+                        <img src="images/1000203460.jpg" alt="Demir Çatı Karkası" onerror="this.src='https://placehold.co/600x450/1e2530/e5e9ee?text=HNFAK+Cati+2'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-steel-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl text-oak-400"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-xs text-oak-400 font-semibold uppercase">Çatı Sistemleri</span>
+                        <h4 class="font-bold text-white mt-1">Ağır Profil Çatı Makası</h4>
+                    </div>
+                </div>
+
+                <!-- Image 3 -->
+                <div class="gallery-item cati bg-steel-800 rounded-xl overflow-hidden border border-steel-700 group cursor-pointer" onclick="openLightbox('images/1000203461.jpg', 'Endüstriyel Demir Çatı Detayı')">
+                    <div class="aspect-[4/3] overflow-hidden relative img-fallback">
+                        <img src="images/1000203461.jpg" alt="Endüstriyel Çatı Yapımı" onerror="this.src='https://placehold.co/600x450/1e2530/e5e9ee?text=HNFAK+Cati+3'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-steel-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl text-oak-400"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-xs text-oak-400 font-semibold uppercase">Çatı Sistemleri</span>
+                        <h4 class="font-bold text-white mt-1">Geniş Açıklıklı Çelik Konstrüksiyon</h4>
+                    </div>
+                </div>
+
+                <!-- Image 4 -->
+                <div class="gallery-item mobilya bg-steel-800 rounded-xl overflow-hidden border border-steel-700 group cursor-pointer" onclick="openLightbox('images/1000203446.jpg', 'Özel Ahşap Balkon L Koltuk')">
+                    <div class="aspect-[4/3] overflow-hidden relative img-fallback">
+                        <img src="images/1000203446.jpg" alt="Ahşap L Koltuk" onerror="this.src='https://placehold.co/600x450/1e2530/e5e9ee?text=HNFAK+Mobilya+1'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-steel-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl text-oak-400"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-xs text-oak-400 font-semibold uppercase">Ahşap Mobilya</span>
+                        <h4 class="font-bold text-white mt-1">Balkona Özel Ahşap L Koltuk</h4>
+                    </div>
+                </div>
+
+                <!-- Image 5 -->
+                <div class="gallery-item mobilya bg-steel-800 rounded-xl overflow-hidden border border-steel-700 group cursor-pointer" onclick="openLightbox('images/1000203445.jpg', 'Bahçe & Balkon Ahşap Köşe Takımı')">
+                    <div class="aspect-[4/3] overflow-hidden relative img-fallback">
+                        <img src="images/1000203445.jpg" alt="Ahşap Köşe Takımı" onerror="this.src='https://placehold.co/600x450/1e2530/e5e9ee?text=HNFAK+Mobilya+2'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-steel-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl text-oak-400"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-xs text-oak-400 font-semibold uppercase">Ahşap Mobilya</span>
+                        <h4 class="font-bold text-white mt-1">Ahşap Oturma Grubu ve Minder İmalatı</h4>
+                    </div>
+                </div>
+
+                <!-- Image 6 -->
+                <div class="gallery-item mobilya bg-steel-800 rounded-xl overflow-hidden border border-steel-700 group cursor-pointer" onclick="openLightbox('images/1000203443.jpg', 'Ahşap Bahçe Mobilyası Imalatı')">
+                    <div class="aspect-[4/3] overflow-hidden relative img-fallback">
+                        <img src="images/1000203443.jpg" alt="Bahçe Mobilyası" onerror="this.src='https://placehold.co/600x450/1e2530/e5e9ee?text=HNFAK+Mobilya+3'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-steel-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl text-oak-400"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-xs text-oak-400 font-semibold uppercase">Ahşap Mobilya</span>
+                        <h4 class="font-bold text-white mt-1">Özel Imalat Veranda Ahşap Takım</h4>
+                    </div>
+                </div>
+
+                <!-- Image 7 -->
+                <div class="gallery-item mobilya bg-steel-800 rounded-xl overflow-hidden border border-steel-700 group cursor-pointer" onclick="openLightbox('images/1000203444.jpg', 'Doğal Ahşap L Koltuk Detayı')">
+                    <div class="aspect-[4/3] overflow-hidden relative img-fallback">
+                        <img src="images/1000203444.jpg" alt="Ahşap Detayı" onerror="this.src='https://placehold.co/600x450/1e2530/e5e9ee?text=HNFAK+Mobilya+4'" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-steel-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <i class="fa-solid fa-magnifying-glass-plus text-3xl text-oak-400"></i>
+                        </div>
+                    </div>
+                    <div class="p-4">
+                        <span class="text-xs text-oak-400 font-semibold uppercase">Ahşap Mobilya</span>
+                        <h4 class="font-bold text-white mt-1">Cilalı Ahşap Köşe Koltuk Imalatı</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE CALCULATOR SECTION -->
+    <section id="hesaplama" class="py-20 bg-steel-950 border-t border-steel-800 wood-pattern">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-steel-900/90 rounded-2xl p-6 sm:p-10 border border-steel-800 backdrop-blur-md shadow-2xl">
+                <div class="text-center mb-8">
+                    <span class="text-oak-400 text-xs font-bold uppercase tracking-widest">Hızlı Tahmini Fiyat</span>
+                    <h2 class="font-heading text-2xl sm:text-3xl font-bold text-white mt-1">Proje Maliyet Hesaplama</h2>
+                    <p class="text-xs text-steel-100/60 mt-2">Ölçülerinizi girerek tahmini malzeme ve işçilik tutarını hesaplayabilirsiniz.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Service Type Selector -->
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-semibold text-steel-100 uppercase tracking-wider mb-2">Hizmet Türü</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <button type="button" id="calc-type-cati" onclick="setCalcType('cati')" class="calc-type-btn p-3 rounded-xl border border-oak-500 bg-oak-500/20 text-white font-semibold text-sm flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-warehouse text-oak-400"></i>
+                                <span>Demir / Çelik Çatı</span>
+                            </button>
+                            <button type="button" id="calc-type-mobilya" onclick="setCalcType('mobilya')" class="calc-type-btn p-3 rounded-xl border border-steel-700 bg-steel-800 text-steel-100 hover:border-steel-600 font-semibold text-sm flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-couch text-oak-400"></i>
+                                <span>Ahşap L Koltuk</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Input 1 -->
+                    <div>
+                        <label id="lbl-input-1" class="block text-xs font-semibold text-steel-100 uppercase tracking-wider mb-2">Alan (m²)</label>
+                        <input type="number" id="calc-val-1" value="50" min="1" class="w-full bg-steel-950 border border-steel-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-oak-500 transition-colors">
+                    </div>
+
+                    <!-- Input 2 -->
+                    <div>
+                        <label id="lbl-input-2" class="block text-xs font-semibold text-steel-100 uppercase tracking-wider mb-2">Kaplama / Malzeme Türü</label>
+                        <select id="calc-val-2" class="w-full bg-steel-950 border border-steel-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-oak-500 transition-colors">
+                            <option value="1">Standart Profil + Trapez Sac</option>
+                            <option value="1.3">Ağır Profil + Sandviç Panel</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Result Display -->
+                <div class="mt-8 p-6 bg-steel-950 rounded-xl border border-steel-800 flex flex-col sm:flex-row items-center justify-between">
+                    <div>
+                        <span class="text-xs text-steel-100/60 uppercase block">Tahmini Ortalama Bütçe</span>
+                        <span id="calc-result" class="font-heading text-3xl font-black text-oak-400">₺45,000 - ₺60,000</span>
+                    </div>
+                    <button onclick="sendCalcToWhatsapp()" class="mt-4 sm:mt-0 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm rounded-xl flex items-center space-x-2 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Bu Teklifi Gönder</span>
+                    </button>
+                </div>
+                <p class="text-[10px] text-steel-100/40 text-center mt-3">* Hesaplanan tutar tahmini olup kesin fiyat ücretsiz keşif sonrasında netleşir.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & FOOTER SECTION -->
+    <footer id="iletisim" class="bg-steel-950 border-t border-steel-800 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-12 pb-12 border-b border-steel-800">
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-oak-500 rounded-lg flex items-center justify-center font-bold text-xl text-steel-950">H</div>
+                        <span class="font-heading text-xl font-black text-white">HNFAK</span>
+                    </div>
+                    <p class="text-sm text-steel-100/70 leading-relaxed">
+                        Demir çatı konstrüksiyonu, çelik karkas yapımı, özel tasarım ahşap L koltuk ve dış mekan mobilya imalatında güvenilir adresiniz.
+                    </p>
+                    <p class="text-xs text-oak-400 font-semibold">
+                        Firma Sahibi: Kadir Akrap
+                    </p>
+                </div>
+
+                <!-- Direct Contact -->
+                <div class="space-y-4">
+                    <h4 class="font-heading text-lg font-bold text-white">İletişim Bilgileri</h4>
+                    <div class="space-y-3 text-sm">
+                        <a href="tel:05079742416" class="flex items-center space-x-3 text-steel-100/80 hover:text-oak-400 transition-colors">
+                            <i class="fa-solid fa-phone text-oak-500 w-5"></i>
+                            <span>0507 974 24 16</span>
+                        </a>
+                        <a href="https://wa.me/905079742416" target="_blank" class="flex items-center space-x-3 text-steel-100/80 hover:text-emerald-400 transition-colors">
+                            <i class="fa-brands fa-whatsapp text-emerald-500 w-5"></i>
+                            <span>WhatsApp İletişim Hattı</span>
+                        </a>
+                        <div class="flex items-center space-x-3 text-steel-100/80">
+                            <i class="fa-solid fa-location-dot text-oak-500 w-5"></i>
+                            <span>Türkiye (Atölye & Yerinde Montaj)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Call Card -->
+                <div class="bg-steel-900 p-6 rounded-2xl border border-steel-800 flex flex-col justify-between">
+                    <div>
+                        <h4 class="font-heading text-base font-bold text-white mb-2">Ücretsiz Keşif & Bilgi</h4>
+                        <p class="text-xs text-steel-100/70">Projenizin ölçülerini verin, size özel fiyat teklifimizi sunalım.</p>
+                    </div>
+                    <a href="tel:05079742416" class="mt-4 w-full py-3 bg-oak-500 hover:bg-oak-600 text-steel-950 font-bold rounded-xl text-center block text-sm transition-all">
+                        <i class="fa-solid fa-phone mr-2"></i> 0507 974 24 16
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-steel-100/50">
+                <p>&copy; 2026 HNFAK Mobilya ve Demir İşleri - Kadir Akrap. Tüm hakları saklıdır.</p>
+                <p class="mt-2 sm:mt-0">GitHub Pages Uyumlu Yapı</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden backdrop-blur-md items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="relative max-w-4xl w-full bg-steel-900 rounded-2xl overflow-hidden border border-steel-700" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 z-10 w-10 h-10 bg-steel-950/80 hover:bg-oak-500 text-white hover:text-steel-950 rounded-full flex items-center justify-center transition-all">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="max-h-[75vh] overflow-hidden flex items-center justify-center bg-black">
+                <img id="lightbox-img" src="" alt="Büyütülmüş Görsel" class="max-h-[75vh] w-auto object-contain">
+            </div>
+            <div class="p-4 bg-steel-900 border-t border-steel-800">
+                <h3 id="lightbox-caption" class="font-heading text-base font-bold text-white text-center"></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Lightbox Functions
+        function openLightbox(src, title) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+
+            lightboxImg.src = src;
+            lightboxCaption.textContent = title;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        }
+
+        // Gallery Filtering
+        function filterGallery(category) {
+            const items = document.querySelectorAll('.gallery-item');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+
+            filterBtns.forEach(btn => {
+                btn.classList.remove('bg-oak-500', 'text-steel-950');
+                btn.classList.add('bg-steel-800', 'text-steel-100');
+            });
+
+            event.target.classList.remove('bg-steel-800', 'text-steel-100');
+            event.target.classList.add('bg-oak-500', 'text-steel-950');
+
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Interactive Quote Calculator
+        let currentCalcType = 'cati';
+
+        function setCalcType(type) {
+            currentCalcType = type;
+            const btnCati = document.getElementById('calc-type-cati');
+            const btnMobilya = document.getElementById('calc-type-mobilya');
+            const lbl1 = document.getElementById('lbl-input-1');
+            const lbl2 = document.getElementById('lbl-input-2');
+            const select2 = document.getElementById('calc-val-2');
+
+            if (type === 'cati') {
+                btnCati.className = "calc-type-btn p-3 rounded-xl border border-oak-500 bg-oak-500/20 text-white font-semibold text-sm flex items-center justify-center space-x-2";
+                btnMobilya.className = "calc-type-btn p-3 rounded-xl border border-steel-700 bg-steel-800 text-steel-100 hover:border-steel-600 font-semibold text-sm flex items-center justify-center space-x-2";
+                lbl1.textContent = "Çatı Alanı (m²)";
+                lbl2.textContent = "Kaplama Malzemesi";
+                select2.innerHTML = `
+                    <option value="1">Standart Profil + Trapez Sac</option>
+                    <option value="1.35">Ağır Çelik Profil + Sandviç Panel</option>
+                `;
+            } else {
+                btnMobilya.className = "calc-type-btn p-3 rounded-xl border border-oak-500 bg-oak-500/20 text-white font-semibold text-sm flex items-center justify-center space-x-2";
+                btnCati.className = "calc-type-btn p-3 rounded-xl border border-steel-700 bg-steel-800 text-steel-100 hover:border-steel-600 font-semibold text-sm flex items-center justify-center space-x-2";
+                lbl1.textContent = "Koltuk Uzunluğu (Metre)";
+                lbl2.textContent = "Ahşap & Minder Türü";
+                select2.innerHTML = `
+                    <option value="1">1. Sınıf Çam / Emprenyeli + Standart Minder</option>
+                    <option value="1.4">Meşe / Sert Ahşap + Su Geçirmez Kumaş</option>
+                `;
+            }
+            calculateQuote();
+        }
+
+        function calculateQuote() {
+            const val1 = parseFloat(document.getElementById('calc-val-1').value) || 0;
+            const mult = parseFloat(document.getElementById('calc-val-2').value) || 1;
+            const resultEl = document.getElementById('calc-result');
+
+            if (currentCalcType === 'cati') {
+                // Base calculation for roof per m2
+                const baseMin = val1 * 850 * mult;
+                const baseMax = val1 * 1150 * mult;
+                resultEl.textContent = `₺${Math.round(baseMin).toLocaleString('tr-TR')} - ₺${Math.round(baseMax).toLocaleString('tr-TR')}`;
+            } else {
+                // Base calculation for wooden L-couch per meter
+                const baseMin = val1 * 4500 * mult;
+                const baseMax = val1 * 6500 * mult;
+                resultEl.textContent = `₺${Math.round(baseMin).toLocaleString('tr-TR')} - ₺${Math.round(baseMax).toLocaleString('tr-TR')}`;
+            }
+        }
+
+        document.getElementById('calc-val-1').addEventListener('input', calculateQuote);
+        document.getElementById('calc-val-2').addEventListener('change', calculateQuote);
+
+        function sendCalcToWhatsapp() {
+            const val1 = document.getElementById('calc-val-1').value;
+            const result = document.getElementById('calc-result').textContent;
+            const typeText = currentCalcType === 'cati' ? 'Çelik/Demir Çatı' : 'Ahşap L Koltuk';
+            
+            const message = encodeURIComponent(`Merhaba Kadir Usta, web sitenizden ${typeText} için hesaplama yaptım.\nÖlçü: ${val1}\nTahmini Tutar: ${result}\nDetaylı bilgi ve kesin teklif almak istiyorum.`);
+            window.open(`https://wa.me/905079742416?text=${message}`, '_blank');
+        }
+
+        // Initialize calculator on page load
+        window.onload = function() {
+            calculateQuote();
+        };
+    </script>
+</body>
+</html>
